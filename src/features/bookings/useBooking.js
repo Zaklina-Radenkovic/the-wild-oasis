@@ -10,7 +10,7 @@ export function useBooking() {
     data: booking,
     error,
   } = useQuery({
-    queryKey: ["booking"],
+    queryKey: ["booking", bookingId],
     queryFn: () => getBooking(bookingId),
     //not to try refetch data 3x, because if there is no data at 1st it wouldn`t be on the 3rd try
     retry: false,

@@ -13,7 +13,7 @@ export function useLogin() {
       //setting manually data in the Reactquery cash
       queryClient.setQueryData(["user"], user.user);
       // console.log(user);
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
       console.log("ERROR", err);

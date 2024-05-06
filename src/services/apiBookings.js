@@ -11,7 +11,8 @@ export async function getBookings({ filter, sortBy, page }) {
     );
 
   //FILTER
-  if (filter) query = query.eq(filter.field, filter.value);
+  //if (filter) query = query.eq(filter.field, filter.value);
+  if (filter) query = query[filter.method || "eq"](filter.field, filter.value);
 
   //SORT
   if (sortBy)
@@ -29,7 +30,7 @@ export async function getBookings({ filter, sortBy, page }) {
 
   if (error) {
     console.error(error);
-    throw new Error("Bookins could not be loaded");
+    throw new Error("Bookings could not be loaded");
   }
 
   return { data, count };

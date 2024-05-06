@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { useEffect, useState } from "react";
+import Checkbox from "../../ui/Checkbox";
 import BookingDataBox from "../../features/bookings/BookingDataBox";
 import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
@@ -10,10 +11,8 @@ import Spinner from "../../ui/Spinner";
 import CheckBox from "../../ui/Checkbox";
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
-import { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils/helpers";
 import { useCheckin } from "./useCheckin";
-import Checkbox from "../../ui/Checkbox";
 import { useSettings } from "../settings/useSettings";
 
 const Box = styled.div`

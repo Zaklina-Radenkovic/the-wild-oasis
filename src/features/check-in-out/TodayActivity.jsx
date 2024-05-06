@@ -1,10 +1,9 @@
 import styled from "styled-components";
-
+import Spinner from "../../ui/Spinner";
+import TodayItem from "./TodayItem";
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
-import Spinner from "../../ui/Spinner";
-import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
   /* Box */
@@ -41,6 +40,7 @@ const NoActivity = styled.p`
 
 function TodayActivity() {
   const { activeBookings, isLoading } = useTodayActivity();
+
   return (
     <StyledToday>
       <Row type="horizontal">
